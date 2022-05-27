@@ -1,11 +1,130 @@
-
-
-
-
 /* Section contacts */
 
+.contacts-left-side {
+  width: 570px;
+  }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
 
+.form-wrapper {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 44px;
+}
+
+.form-wrapper .form-group {
+  padding-top: 20px;
+  position: relative;
+}
+
+.form-wrapper .form-group:not(:last-child) {
+  margin-right: 30px;
+}
+
+.form-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: rgba(157, 164, 189, 0.4);
+
+  transform: translateY(20px);
+  transition: transform 400ms ease;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  color: #ffffff;
+  transform: translateY(0);
+}
+
+.form-input {
+  background-color: transparent;
+  width: 270px;
+  padding: 5px;
+
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+  outline: transparent;
+
+  transition: border-color 400ms ease;
+}
+
+.form-input::placeholder {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.form-input:focus::placeholder {
+  opacity: 1;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: rgba(157, 164, 189, 0.4);
+}
+
+.form-input:focus {
+  border-bottom: 1px solid #fff;
+}
+
+.form-message {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+  width: 100%;
+  resize: none;
+  color: #fff;
+  outline: transparent;
+
+  transition: border-color 400ms ease;
+}
+
+.form-message::placeholder {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.form-message:focus::placeholder {
+  opacity: 1;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: rgba(157, 164, 189, 0.4);
+}
+
+.form-message:focus {
+  border-bottom: 1px solid #fff;
+}
+
+.form-message-group {
+  position: relative;
+  margin-bottom: 44px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.form-message:focus + .form-label,
+.form-message:not(:placeholder-shown) + .form-label {
+  color: #ffffff;
+  transform: translateY(0);
+}
 
 /* footer */
-

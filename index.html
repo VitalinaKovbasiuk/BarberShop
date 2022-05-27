@@ -50,22 +50,38 @@
           <div class="contacts-left-side">
             <h2 class="section-title">Онлайн-запись</h2>
             <form class="contact-form" name="contact-form">
-              <label class="form-group">
-                <span class="form-label">Имя*</span>
-                <input type="text" id="user-name" name="user-name" />
-              </label>
-              <label class="form-group">
-                <span class="form-label">Телефон*</span>
-                <input type="text" id="user-phone" name="user-phone" />
-              </label>
-              <label class="form-group">
-                <span class="form-label">сообщение</span>
+              <div class="form-wrapper">
+                <label class="form-group">
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="user-name"
+                    name="user-name"
+                    placeholder="Сергей"
+                  />
+                  <span class="form-label">Имя*</span>
+                </label>
+                <label class="form-group">
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="user-phone"
+                    name="user-phone"
+                    placeholder="+38 099 123 45 67"
+                  />
+                  <span class="form-label">Телефон*</span>
+                </label>
+              </div>
+
+              <label class="form-message-group">
                 <textarea
-                  name="form-message"
+                  class="form-message"
+                  name="user-message"
                   id="user-message"
-                  cols="30"
-                  rows="10"
+                  rows="2"
+                  placeholder="Ваш коментарий..."
                 ></textarea>
+                <span class="form-label">сообщение</span>
               </label>
               <button class="btn btn-mode-dark" type="submit">отправить</button>
             </form>
@@ -102,4 +118,3 @@
     </footer>
   </body>
 </html>
- 
