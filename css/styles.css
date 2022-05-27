@@ -1,4 +1,283 @@
-/* Section contacts */
+
+
+
+
+
+/*#region MODAL FORM*/
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    transition: opacity var(--fast-anim), visibility var(--fast-anim);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.modal-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    padding: 25px;
+
+    background-color: #fff;
+    border-radius: 10px;
+
+    transition: transform 300ms ease-in-out 200ms, opacity 300ms ease-in-out 200ms;
+}
+
+/* початковий стан елемента перед анімацією */
+.backdrop.is-hidden .modal-wrapper {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0;
+}
+
+/* кінцевий стан елемента після анімації */
+.backdrop .modal-wrapper {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+
+    border: 1px solid #ff6c00;
+    border-radius: 50%;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+/* modal form */
+.form-title {
+    display: block;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.form-modal-group,
+.form-pay-type,
+.form-policy-group {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form-modal-group {
+    position: relative;
+}
+
+.form-modal-label {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.form-modal-label:before {
+    content: "\002A";
+    position: absolute;
+    top: 0;
+    right: -12px;
+    color: #e22f37;
+}
+
+.form-modal-input {
+    width: 100%;
+    padding: 12px 40px;
+
+    border-radius: 5px;
+    border: 1px solid #191c26;
+    outline: transparent;
+}
+
+.form-modal-icon {
+    position: absolute;
+    bottom: 12px;
+    left: 10px;
+
+    fill: #303030;
+    transition: fill 400ms ease-in-out;
+}
+
+.form-modal-input:valid:not(:placeholder-shown)~.form-modal-icon {
+    fill: #69e883;
+}
+
+.form-modal-input:focus~.form-modal-icon {
+    fill: #ffc039;
+}
+
+.form-modal-input:invalid:not(:placeholder-shown)~.form-modal-icon {
+    fill: #e22f37;
+}
+
+.warning,
+.error {
+    position: absolute;
+    bottom: -22px;
+    left: 10px;
+
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    letter-spacing: -0.6em;
+    opacity: 0;
+    transition: 400ms ease-out 100ms;
+}
+
+.error {
+    color: #e22f37;
+}
+
+.warning {
+    color: #ffc039;
+}
+
+.form-modal-input:focus~.warning,
+.form-modal-input:focus~.warning-icon {
+    letter-spacing: 0.01em;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.form-modal-input:not(:placeholder-shown)~.warning,
+.form-modal-input:not(:placeholder-shown)~.warning-icon {
+    opacity: 0;
+}
+
+.form-modal-input:invalid:not(:placeholder-shown) {
+    border-color: #e22f37;
+}
+
+.form-modal-input:valid:not(:placeholder-shown) {
+    border-color: #69e883;
+}
+
+.form-modal-input:invalid:not(:placeholder-shown)~.error,
+.form-modal-input:invalid:not(:placeholder-shown)~.error-icon {
+    letter-spacing: 0.01em;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.warning-icon,
+.error-icon {
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
+    display: inline-flex;
+    fill: currentColor;
+    opacity: 0;
+    transform: scale(0.3);
+
+    transition: opacity 300ms ease-in-out 100ms, transform 300ms ease-in-out 100ms;
+}
+
+.error-icon {
+    fill: #e22f37;
+}
+
+.warning-icon {
+    fill: #ffc039;
+}
+
+/* checkbox style */
+.form-policy-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+    outline: 2px solid #ff6c00;
+    outline-offset: -2px;
+
+    transition: background-color 300ms ease-in;
+}
+
+.checkbox:checked+.custom-checkbox {
+    background-color: #ff6c00;
+}
+
+.custom-checkbox-icon {
+    fill: #ffffff;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}
+
+.checkbox:checked+.custom-checkbox .custom-checkbox-icon {
+    opacity: 1;
+}
+
+.form-policy-desc {
+    font-size: 16px;
+}
+
+.form-policy-link {
+    color: #ff6c00;
+}
+
+/* payment checkbox */
+.form-pay-type {
+    display: flex;
+    align-items: center;
+}
+
+.form-pay-group:not(:last-child) {
+    margin-right: 20px;
+}
+
+.form-pay-option {
+    fill: #ff6c00;
+    filter: grayscale(1);
+
+    transition: filter 400ms ease-in-out;
+}
+
+.form-pay-checkbox:checked+.form-pay-option {
+    filter: grayscale(0);
+}
+
+.submit-btn {
+    display: block;
+    margin: 0 auto;
+}
+
+/*#endregion*/
+
+/*#region Section contacts*/
 
 .contacts-left-side {
   width: 570px;
@@ -127,4 +406,9 @@
   transform: translateY(0);
 }
 
-/* footer */
+/*#endregion*/
+
+/*#region FOOTER*/
+
+/*#endregion*/
+
