@@ -26,6 +26,33 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    font-family: var(--main-font);
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: 0.02em;
+
+    color: var(--main-txt-cl);
+
+    /* background-image: url(../images/stock.jpg); */
+    /* background-size: 300px 300px; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 
 
