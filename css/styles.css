@@ -224,7 +224,44 @@ img {
     color: #ffffff;
   }
   
-
+/**
+  |============================
+  | Посилання на соц.мережі
+  |============================
+*/
+.social-links-list:before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    margin-right: 40px;
+  
+    background-color: #303030;
+  }
+  
+  .social-links-item {
+    margin-right: 40px;
+  }
+  
+  .social-links-item:last-child {
+    margin-right: 0;
+  }
+  
+  .social-links-item-link {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.2em;
+  
+    color: #303030;
+    transition: color var(--fast-anim);
+  }
+  
+  .social-links-item-link:hover,
+  .social-links-item-link:focus {
+    color: var(--accent-cl);
+  }
+  
 
 /*#region MODAL FORM*/
 
