@@ -845,7 +845,49 @@ img {
   }
 }
 
+/**
+  |============================
+  | About section
+  |============================
+*/
 
+.about-container {
+  display: flex;
+}
+
+.about .list {
+  display: flex;
+  margin-right: 64px;
+}
+
+.about .item {
+  margin-right: 30px;
+  overflow: hidden;
+}
+
+.about-img {
+  transition: transform var(--slow-anim);
+}
+
+.about .item:hover .about-img {
+  transform: scale(1.15);
+}
+
+.about .item:last-child {
+  margin-right: 0;
+}
+
+.about-group {
+  width: 500px;
+}
+
+.about-subtitle {
+  margin-bottom: 20px;
+}
+
+.about .description {
+  margin-bottom: 40px;
+}
 
 /*#region Section contacts*/
 
