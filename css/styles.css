@@ -1196,7 +1196,6 @@ img {
 }
 
 
-
 /*#region Section contacts*/
 
 .contacts-left-side {
@@ -1331,4 +1330,71 @@ img {
 /*#region FOOTER*/
 
 /*#endregion*/
+
+
+/**
+  |============================
+  | Studio header icons
+  |============================
+*/
+.studio-list {
+  display: flex;
+  align-items: center;
+}
+
+.studio-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.studio-link {
+  display: flex;
+  align-items: center;
+
+  color: #757575;
+}
+
+.studio-link:hover,
+.studio-link:focus {
+  color: #ff6c00;
+}
+
+.studio-icon {
+  margin-right: 5px;
+  fill: currentColor;
+}
+
+.pizza-icon {
+  --color1: #fed070;
+  --color2: #faf8d2;
+  --color3: #d79c8c;
+  --color4: #cd6e61;
+  --color5: #e22f37;
+  --color6: #a4e869;
+}
+
+/* Clients icons */
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 170px;
+  height: 92px;
+
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+
+.clients-link:hover {
+  border-color: #ff6c00;
+}
+
+.clients-icon {
+  fill: #afb1b8;
+}
+
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  fill: #ff6c00;
+}
 
